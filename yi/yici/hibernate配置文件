@@ -1,0 +1,63 @@
+<实例1>
+<1.创建hibernate配置文件hibernate.cfg.xml>
+
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+<--数据库jdbc驱动-->
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<--数据库url-->
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+<--数据库用户名-->
+        <property name="connection.username">system</property>
+<---数据库密码-->
+        <property name="connection.password">123</property>
+
+<--数据库对应的dialect以匹配其平台特性-->
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+<--对应的映射文件-->
+        <mapping resource="entity/hb.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>
+
+
+<实例2>
+    public Class Dept implement serializable{
+         private byte dertno;
+         private String deptname;
+         private String location;
+         pubic dept(){
+}
+//右击生成get，set方法；
+}
+
+
+<--实例34-->
+<2.映射文件>
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+ <hibernate-mapping package="entity">
+    <class name="hb" table="hb">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+        
+        <property name="name" column="name" />
+    </class>
+
+</hibernate-mapping>
+
